@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    position: fixed !important;
+    top: 0px;
+    min-width: 100vw;
+    z-index: 1;
+}
+
+.nav-link{
+    color: white !important;
+}
+
+.navbar-brand{
+    color: white !important;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.nav-link:hover{
+    color: coral !important;
+}
+
+.home img{
+    width: 100%;
+    filter: brightness(0.4);
+    z-index: -1;
+    max-height: 100vh;
+}
+
+.d-flex{
+    margin-right: 25px;
+}
+
+.form-control{
+    border-radius: 25px !important;
+}
+.radius{
+    border-radius: 25px !important;
+}
+.dropdown-menu{
+   background-color: transparent !important;
+   border: 1px solid #121212 !important;
+   backdrop-filter: blur(0.8px);
+}
+.dropdown-item{
+    color: white !important;
+    background-color: transparent !important;
+}
+.dropdown-item:hover{
+    color: coral !important;
+}
+
+.navbar-toggler{
+    background-color: #fff !important;
+}
+
+.textbox{
+    max-width: 40vw;
+    min-height: 45vh;
+    /* background-color: red; */
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    margin: auto;
+    /* z-index: 10; */
+    transform: translate(-50%,-50%);
+}
+.textbox h1{
+    color: coral;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.textbox p{
+    margin: auto;
+    color: #fff;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+.btn-coral{
+    background-color: coral !important;
+    color: white !important;
+    margin-right: 10px;
+}
+.btn-coral:hover{
+    background-color: transparent !important;
+    border: 1px solid coral !important;
+    box-sizing: border-box !important;
+}
+
