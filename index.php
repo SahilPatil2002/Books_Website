@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,7 +142,7 @@
 
       <!--------------------------------------------------------------------------------- section 3 start  -------------------------------------------------------------->
 
-      <form action="" class="form">
+      <form action="index.php" class="form" method="post">
         <div class="details">
           <h1>Order<span> Your Book</span></h1>
           <p>Please Enter Your <span>details</span> carefully</p>
@@ -151,3 +168,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+<?php 
+$insert = false ;
+if(isset($_POST['name'])){
+  $server = "localhost";
+  $username = "root";
+  $password = "";
+
+
+  $con = mysqli_connect($server,$username,$password);
+  if(!$con){
+    die("connection to this database failed due to ".mysqli_connect());
+  }
+
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $books = $_POST['book'];
+  $phones = $_POST['phone'];
+
+  $sql = "INSERT INTO `book`.`book` (`name`, `email`, `book`, `phone`, `dt`) VALUES ('$name', '$email', '$books', '$phones', current_timestamp());";
+
+  if($con->query($sql) == true){
+    // echo "Successfully inserted";
+    $insert = true;
+}else{
+    echo "ERROR : $sql <br> $con->error";
+}
+$con->close();
+}
+
+
+?>
