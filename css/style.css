@@ -8,6 +8,9 @@
 .navbar{
     position: fixed !important;
     top: 0px;
+    /* background-color: rgba(100, 100, 100, 0.5) !important; */
+    -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
     min-width: 100vw;
     z-index: 1;
 }
@@ -17,7 +20,7 @@
 }
 
 .navbar-brand{
-    color: white !important;
+    color: coral !important;
     letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: bold;
@@ -47,7 +50,7 @@
 .dropdown-menu{
    background-color: transparent !important;
    border: 1px solid #121212 !important;
-   backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px) !important;
 }
 .dropdown-item{
     color: white !important;
@@ -110,5 +113,87 @@ font-weight: bold;
     letter-spacing: 5px;
     font-family: 'Stick No Bills', sans-serif;
 }
+.row{
+    margin: 20px auto !important;
+    max-width: 80vw;
+    /* margin-bottom: 40px !important; */
+}
+.col{
+    margin-bottom: 20px !important;
+    transition: 1s all ease;
+}
+.col:hover{
+    transform: translateY(-10px);
+}
+.card img{
+    max-height: 70vh;
+    /* max-width: 50vh; */
+}
+.card-title{
+    text-align: center;
+}
+
+.form{
+    max-width: 100%;
+    height: 100vh;
+    background-image: url(../image/login.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* z-index: -1; */
+    display: flex;
+    align-items: center;
+}
+
+.details{
+    margin-left: 10vh;
+    max-width: 50%;
+    min-height: 55vh;
+    border: 1px solid coral;
+    backdrop-filter: blur(2.5px);
+    border-radius: 20px;
+    /* z-index: 100; */
+}
+.details h1{
+    color: coral;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.details p{
+    color: coral;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.details span{
+    color: white;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.input input{
+    width: 40vw;
+    border: none;
+    height: 5vh;
+    border-radius: 15px;
+    outline: none;
+    margin: 10px;
+    padding: 10px;
+    font-family: "stick no bills",cursive;
+}
+
+.input input::-webkit-inner-spin-button{
+    visibility: hidden;
+}
+.shop{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
 
 
