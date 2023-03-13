@@ -134,7 +134,7 @@
             } else {
                 document.getElementById("name").style.border = " 2px solid red";
                 document.getElementById("name").style.borderRadius = " 10px";
-                alert("invalid Name")
+                // alert("invalid Name")
             }
 
 
@@ -144,7 +144,7 @@
             } else {
                 document.getElementById("email").style.border = " 2px solid red";
                 document.getElementById("email").style.borderRadius = " 10px";
-                alert("invalid Email ID")
+                // alert("invalid Email ID")
             }
 
 
@@ -156,7 +156,7 @@
             } else {
                 document.getElementById("psd").style.border = " 2px solid red";
                 document.getElementById("psd").style.borderRadius = " 10px";
-                alert("invalid Password")
+                // alert("invalid Password")
             }
 
         }

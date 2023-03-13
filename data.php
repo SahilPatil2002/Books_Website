@@ -1,100 +1,77 @@
-<?php
-
-$insert = false ;
-if(isset($_POST['name'])){
-  $server = "localhost";
-  $username = "root";
-  $password = "";
-
-
-  $con = mysqli_connect($server,$username,$password);
-  if(!$con){
-    die("connection to this database failed due to ".mysqli_connect());
-  }
-
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  // $bk = $_POST['book'];
-  // $ph = $_POST['phone'];
-  $bk_name =$_POST['book-name'];
-  $ph_no =$_POST['number'];
-  $sql = "SELECT * FROM `book`.`web`";
-  $result = $con->query($sql);
-  $con->close();
-
-
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Data</title>
     <style>
-        table {
-            margin: 0 auto;
-            font-size: large;
-            border: 1px solid black;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
- 
-        h1 {
-            text-align: center;
-            color: #006600;
-            font-size: xx-large;
-            font-family: 'Gill Sans', 'Gill Sans MT',
-            ' Calibri', 'Trebuchet MS', 'sans-serif';
+        h1{
+            font-weight:bold;
+            font-size:45px;
+            text-align:center;
+            letter-spacing:5px;
+            color:#d96459
         }
- 
-        td {
-            background-color: #E4F5D4;
-            border: 1px solid black;
+        table{
+            border-collapse:collapse;
+            width:100%;
+            color:#d96459;
+            font-size:25px;
+            text-align:left;
         }
- 
-        th,
-        td {
-            font-weight: bold;
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
+        th{
+            background-color:#d96459;
+            color:white; 
+            padding-left:50px
         }
- 
-        td {
-            font-weight: lighter;
+        td{
+            padding-left:50px;
+
+        }
+        tr:nth-child(even){
+            background:#f2f2f2;
         }
     </style>
 </head>
 <body>
-<section>
-        <h1>Data</h1>
-        <!-- TABLE CONSTRUCTION -->
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>email</th>
-                <th>book name</th>
-                <th>number</th>
-            </tr>
-            <!-- PHP CODE TO FETCH DATA FROM ROWS -->
-            <?php
-                // LOOP TILL END OF DATA
-            $rows = $result->fetch_assoc();
-                
-            ?>
-            <tr>
-                <!-- FETCHING DATA FROM EACH
-                    ROW OF EVERY COLUMN -->
-                <td><?php echo $rows['name'];?></td>
-                <td><?php echo $rows['email'];?></td>
-                <td><?php echo $rows['bk'];?></td>
-                <td><?php echo $rows['ph'];?></td>
-            </tr>
-            <?php
-                
-            ?>
-        </table>
-    </section>
+    <h1>DATA</h1>
+    <table>
+        <tr>
+            <th>S.no</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Book Name</th>
+            <th>Phone number</th>
+        </tr>
+
+        <?php 
+        $con = mysqli_connect("localhost","root","","book");
+        if($con->connect_error){
+            die("Connection failed : ".$con -> connect_error);
+        }   
+        $sql = "SELECT sno, name, email ,bk ,ph from web";
+        $result = $con-> query($sql);
+        // echo "<h1>DATA</h1>";
+        if($result->num_rows >0){
+            while ($row = $result->fetch_assoc()) {
+            
+                echo "<tr><td>".$row["sno"]."</td><td>".$row["name"]."</td><td>".$row["email"]."</td><td>".$row["bk"]."</td><td>".$row["ph"]."</td></tr>";
+            }
+            echo"</table>";
+        }else{
+            echo "0 results";
+        }
+
+        $con ->close();
+        
+        ?>
+
+    </table>
 </body>
 </html>

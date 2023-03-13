@@ -1,20 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +33,7 @@
                   Section
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="data.php">Show Data</a></li>
                   <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -154,7 +138,7 @@
           </div>
           <div class="shop">
           <button class="btn btn-coral">Order Now</button>
-          <button class="btn btn-primary">Add to cart</button>
+          <button class="btn btn-primary">Add to Cart</button>
         </div>
         </div>
       </form>
@@ -166,6 +150,11 @@
 
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function myFunction(){
+        window.location.replace="data.php";
+      }
+    </script>
 </body>
 </html>
 
