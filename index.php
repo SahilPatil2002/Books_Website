@@ -185,10 +185,12 @@ if(isset($_POST['name'])){
 
   $name = $_POST['name'];
   $email = $_POST['email'];
-  $books = $_POST['book'];
-  $phones = $_POST['phone'];
+  // $bk = $_POST['book'];
+  // $ph = $_POST['phone'];
+  $bk_name =$_POST['book-name'];
+  $ph_no =$_POST['number'];
 
-  $sql = "INSERT INTO `book`.`book` (`name`, `email`, `book`, `phone`, `dt`) VALUES ('$name', '$email', '$books', '$phones', current_timestamp());";
+  $sql = "INSERT INTO `book`.`web` (`name`, `email`, `bk`, `ph`, `dt`) VALUES ('$name', '$email','$bk_name','$ph_no', current_timestamp());";
 
   if($con->query($sql) == true){
     // echo "Successfully inserted";
